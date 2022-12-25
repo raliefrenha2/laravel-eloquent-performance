@@ -9,8 +9,8 @@ class PostsController extends Controller
     public function index()
     {
         $years = Post::query()
-            ->select('*')
-            ->with('author')
+            // ->select('*')
+            // ->with('author')
             ->select('id', 'title', 'slug', 'published_at', 'author_id')
             ->with('author:id,name')
             ->latest('published_at')
